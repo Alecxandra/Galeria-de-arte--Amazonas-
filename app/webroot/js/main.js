@@ -1,0 +1,1 @@
+$('#CarouselP').carousel('pause');

@@ -77,4 +77,10 @@ class Painter extends AppModel {
 			),
 		),
 	);
+  
+  public $hasMany = array(
+        'Painting' => array(
+            'className' => 'Painting',
+        )
+    );
 }

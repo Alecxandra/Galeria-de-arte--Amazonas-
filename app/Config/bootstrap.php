@@ -91,7 +91,7 @@ Configure::write('Dispatcher.filters', array(
 	'AssetDispatcher',
 	'CacheDispatcher'
 ));
-
+//date_default_timezone_set('UTC');
 /**
  * Configures default file logging options
  */

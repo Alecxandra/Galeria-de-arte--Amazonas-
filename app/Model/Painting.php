@@ -87,4 +87,20 @@ class Painting extends AppModel {
 			),
 		),
 	);
+ 
+  public $belongsTo = array(
+        'Painter' => array(
+            'className' => 'Painter',
+            'foreignKey' => 'id_painter'
+        ),
+        'Technique' => array(
+            'className' => 'Technique',
+            'foreignKey' => 'id_technique'
+        ),
+        'Type' => array(
+            'className' => 'Type',
+            'foreignKey' => 'id_type'
+        )
+    );
+ 
 }
