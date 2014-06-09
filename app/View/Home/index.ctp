@@ -1,20 +1,4 @@
-  <!-- Barra principal-->
-  <div class="masthead">
-        <ul class="nav nav-justified">
-          <li class="active"><a href="#">Home</a></li>
-          <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Galeria<b class="caret"></b></a>
-            <ul class="dropdown-menu">
-                <li><?php echo $this->Html->link('Pinturas', array('controller' => 'Paintings', 'action' => 'gallery'));?></li>
-                 <li class="divider"></li>
-                <li><a href="#">Pintores</a></li>
-            </ul>
-          </li>
-          <li><a href="#">Quienes somos</a></li>
-          <li><a href="#">Contactanos</a></li>
-          <li><a href="#">Login</a></li>
-          </ul>
-      </div>
+
     <br><br><br>
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->

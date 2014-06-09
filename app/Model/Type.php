@@ -41,6 +41,7 @@ class Type extends AppModel {
   public $hasMany = array(
         'Painting' => array(
             'className' => 'Painting',
+            'foreignKey' => 'id_type',
         )
     );
 }

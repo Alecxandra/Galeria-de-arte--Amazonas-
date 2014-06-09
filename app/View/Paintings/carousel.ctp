@@ -9,18 +9,18 @@
 	    echo "<div class='item active' style='height: 600px; width:1050px;'>". $this->Html->image($painting['Painting']['painting_picture'],array('style' => 'height: 600px;width:1050px;'));
       echo"<div class='carousel-caption'>";
       echo "<h1>".$painting['Painting']['painting_name']."</h1>";
-      echo "<p>Autor: "."</p>";
+      echo "<p>Pintor: ".$painting['Painter']['painter_name']."</p>";
       echo "<p> Tamaño: ".$painting['Painting']['painting_high']."x".$painting['Painting']['painting_width']."</p>";
-      echo "<p> Técnica: "."</p>";
+      echo "<p> Técnica: ".$painting['Type']['type_name']."</p>";
             echo "</div>";
         echo "</div>";
 	  }else{
 	    echo "<div class='item' style='height: 600px; width:1050px;'>".$this->Html->image($painting['Painting']['painting_picture'],array('style' => 'height: 900px;          width:1050px;'));
       echo"<div class='carousel-caption'>";
       echo "<h1>".$painting['Painting']['painting_name']."</h1>";
-      echo "<p>Autor: "."</p>";
+      echo "<p>Pintor: ".$painting['Painter']['painter_name']."</p>";
       echo "<p> Tamaño: ".$painting['Painting']['painting_high']."x".$painting['Painting']['painting_width']."</p>";
-      echo "<p> Técnica: "."</p>";
+      echo "<p> Técnica: ".$painting['Type']['type_name']."</p>";
             echo "</div>";
         echo "</div>";
 	  } 
