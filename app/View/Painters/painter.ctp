@@ -1,4 +1,4 @@
-
+<br><br><br>
   <!-- Jumbotron -->
 <br><br>      
 <div class="jumbotron">
@@ -18,18 +18,23 @@
       ?>
      </div>
 
- <div class="container">
+ <div class="divider" id="section3"></div>
+ <div class="bg-4">
+     <div class="container">
    <?php       
    $cont;
-          $cont=0;
+   $cont=0;
+   $id_painter;
              foreach($painters as $painter ) {
+                      $id_painter=$painter['Painter']['id_painter'];  
                   foreach( $painter[ 'Painting' ] as $painting ) {
                     $cont++;
                      if($cont==1){
-                           echo "<div class='row' style= 'padding: 0 170px;padding-bottom:8px;'>";
+                           echo "<div class='row' style= 'padding: 0 0;padding-bottom:20px;'>";
                       }      
-                    echo "<div class='col-md-3'>";echo $this->Html->image($painting['painting_picture'], array(
-        'url' => array('controller' => 'Paintings','action' => 'carousel', 'id' => $painting['id_painting']),
+                    echo "<div class='col-md-3'>";echo $this->Html->image($painting['painting_picture'], array('style'=>'height:200px;
+  width:200px;',
+        'url' => array('action' => 'paintings_painter', 'id' => $painting['id_painting'],'id_painter'=>$id_painter),
     )); echo"</div>";
                      if($cont==4){
                          echo"</div>";
@@ -39,4 +44,4 @@
  
                }
 ?>
-                 </div>
+                 </div></div>

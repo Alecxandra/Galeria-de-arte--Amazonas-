@@ -1,4 +1,5 @@
- <H1 align="center"> Pintores </H1>
+<br><br><br>
+<H1 align="center"> Pintores </H1>
 <br><br>
 <div class="container">
    <?php 
