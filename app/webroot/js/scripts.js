@@ -1,4 +1,10 @@
-$('.carousel').carousel({interval:false});
+$(document).ready(function() {
+    $('.carousel').carousel({
+      interval: 2000
+    })
+  });
+
+/*$('.carousel').carousel({interval:true});*/
 
 /* affix the navbar after scroll below header */
 $('#nav').affix({

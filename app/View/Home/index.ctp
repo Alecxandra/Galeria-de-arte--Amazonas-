@@ -5,48 +5,29 @@
 
   	<!-- Carousel
     ================================================== -->
-    <div id="myCarousel" class="carousel slide" style="max-width: 100%;height: 600px;">
+    <div id="myCarousel" class="carousel slide" style="max-width: 100%;height: 600px;" data-ride="carousel">
       <!-- Indicators -->
       <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
         <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
         <li data-target="#myCarousel" data-slide-to="3"></li>
       </ol>
       <div class="carousel-inner" >
         <div class="item active" >
          <?php echo $this->Html->image("Local/pinturas.jpg") ?>
           <div class="container" >
-           <div class="carousel-caption">
-                <h2>Architectural Design</h2>
-              <p></p>
-            </div>
+           
           </div>
         </div>
-          <div class="item" >
-         <?php echo $this->Html->image("Local/pinturas1.jpg") ?>
-          <div class="container" >
-            <div class="carousel-caption">
-              <h2>Architectural Design</h2>
-              <p></p>
-            </div>
+                  <div class="item" >
+          <?php echo $this->Html->image("Local/local1.png"); ?>
+          <div class="container">
+            
           </div>
         </div>
         <div class="item" >
-          <?php echo $this->Html->image("Local/IMG_9653.jpg"); ?>
+          <?php echo $this->Html->image("Local/local2.png"); ?>
           <div class="container">
-            <div class="carousel-caption">
-              <h2>Interior Design</h2>
-              <p></p>
-            </div>
-          </div>
-        </div>
-        <div class="item" >
-          <?php echo $this->Html->image("Local/IMG_9720.jpg"); ?>
-          <div class="container">
-            <div class="carousel-caption">
-              <h2>Renovations &amp; Adaptive Re-use</h2>
-              <p></p>
             </div>
           </div>
         </div>       
@@ -338,3 +319,5 @@
    </div>
   </div>
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    

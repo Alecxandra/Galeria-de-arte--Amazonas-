@@ -12,7 +12,9 @@ body {
   margin-left:0px;
   margin-right:0px;
 }
-
+.carousel-caption {
+	background: rgba(0, 0, 0, 0.5);
+}
 /* Wrapper for page content to push down footer */
 #wrap {
   min-height: 100%;

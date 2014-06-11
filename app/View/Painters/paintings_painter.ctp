@@ -1,5 +1,5 @@
-<br><br><br>
-
+<br><br>
+<div align="center" style="background-color:#4A4940">
 	<div id="CarouselPainter" class="carousel slide" data-ride="carousel" data-interval="false" style="height: 600px; width:1050px;">
 	<div class="carousel-inner" style="height: 600px; width:1050px;">
 	<?php 
@@ -37,4 +37,4 @@
 	</div> 
 	<a class="left carousel-control" href="#CarouselPainter" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
 	<a class="right carousel-control" href="#CarouselPainter" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
-	</div>
+	</div></div>

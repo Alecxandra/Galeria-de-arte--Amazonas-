@@ -51,7 +51,7 @@
 	<!-- Scripts -->
 	<?php echo $this->Html->script(array(
 			'http://code.jquery.com/jquery-2.1.1.js',
-			'bootstrap.min',
+    'bootstrap.min',
        'main',
        'scripts',
 		)); 

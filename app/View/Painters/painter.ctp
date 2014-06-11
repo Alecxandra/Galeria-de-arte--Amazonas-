@@ -18,30 +18,38 @@
       ?>
      </div>
 
- <div class="divider" id="section3"></div>
- <div class="bg-4">
+
+<!-- File: /app/View/Posts/index.ctp -->
+<BR><BR>
+
+
+<div class="divider" id="section3"></div>
+ <div class="bg-4" >
      <div class="container">
-   <?php       
-   $cont;
-   $cont=0;
-   $id_painter;
-             foreach($painters as $painter ) {
-                      $id_painter=$painter['Painter']['id_painter'];  
-                  foreach( $painter[ 'Painting' ] as $painting ) {
-                    $cont++;
-                     if($cont==1){
-                           echo "<div class='row' style= 'padding: 0 0;padding-bottom:20px;'>";
-                      }      
-                    echo "<div class='col-md-3'>";echo $this->Html->image($painting['painting_picture'], array('style'=>'height:200px;
-  width:200px;',
-        'url' => array('action' => 'paintings_painter', 'id' => $painting['id_painting'],'id_painter'=>$id_painter),
-    )); echo"</div>";
-                     if($cont==4){
-                         echo"</div>";
-                        $cont=0;
-                        }
-                  }
- 
-               }
-?>
-                 </div></div>
+       <?php 
+  $cont;
+$cont=0;
+$id_painter;
+ foreach($painters as $painter){
+    $id_painter=$painter['Painter']['id_painter'];  
+      foreach( $painter[ 'Painting' ] as $painting ) {
+   $cont++;
+   if($cont==1){
+     echo "<div class='col-sm-4 col-xs-6'>";
+   }
+   echo $this->Html->useTag('tagstart', 'a', array('href' => $this->Html->url(array('action' => 'paintings_painter', 'id' => $painting['id_painting'],'id_painter'=>$id_painter))));
+   echo "<div class='panel panel-default'>";
+   echo "<div class='panel-thumbnail'>".$this->Html->image($painting['painting_picture'], array('class'=>'img-responsive',)); echo"</div>";
+    echo "<div class='panel-body'><p>".$painting['painting_name']."</p><p></p></div></div>";
+   echo $this->Html->useTag('tagend', 'a');
+   if($cont==3){
+     echo"</div>";
+     $cont=0;
+   }
+      }//fin for
+ }//Fin for
+ ?>  
+     </div>
+   </div>
+
+
