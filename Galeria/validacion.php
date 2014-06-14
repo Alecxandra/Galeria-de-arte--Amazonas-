@@ -26,11 +26,7 @@ class validacion
 
   {
 
-    echo $this->campo."</br>";
-
     $this->campo = $this->Inyeccion($campo);
-
-    echo $this->campo."</br>";
 
   }
 

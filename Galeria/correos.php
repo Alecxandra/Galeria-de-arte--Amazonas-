@@ -44,12 +44,8 @@ class correos
 
   {
 
-    echo $this->remitente."</br>";
-
     $this->validacion->setCampo($this->remitente);
     $this->remitente = $this->validacion->Correo();
-
-    echo $this->remitente."</br>";
 
     if($this->remitente != "NULO")
 
