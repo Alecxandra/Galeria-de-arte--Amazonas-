@@ -1,37 +1,36 @@
 <?php
 
-if(isset($_POST['mail']))
+  require_once("correos.php");
 
-{
+  if(isset($_POST['mail']))
 
-// Debes editar las próximas dos líneas de código de acuerdo con tus preferencias
-$email_to = "beito_xp@me.com";
-$email_subject = "Contacto desde el sitio web";
+  {
 
-// Aquí se deberían validar los datos ingresados por el usuario
-if(!isset($_POST['asunto']) || !isset($_POST['mail']) || !isset($_POST['comentario']))
-{
+    if(!isset($_POST['asunto']) || !isset($_POST['mail']) || !isset($_POST['comentario']))
 
-echo "<b>Ocurrió un error y el formulario no ha sido enviado. </b><br />";
-echo "Por favor, vuelva atrás y verifique la información ingresada<br />";
-die();
-}
+    {
 
-$email_message = "Detalles del formulario de contacto:\n\n";
-$email_message .= "Asunto: " . $_POST['asunto'] . "\n";
-$email_message .= "Tu Correo: " . $_POST['mail'] . "\n";
-$email_message .= "Comentarios: " . $_POST['comentario'] . "\n\n";
+      echo "<b>Ocurrió un error y el formulario no ha sido enviado. </b><br />";
+      echo "Por favor, vuelva atrás y verifique la información ingresada<br />";
 
+      die();
 
-// Ahora se envía el e-mail usando la función mail() de PHP
-$headers = 'From: no-reply@oldlaser.com' . "\n\n" . 'Reply-To: '.$_POST['mail'];
+    }
 
+    else
 
+    {
 
-mail($email_to, $_POST['mail'], $email_message, $headers);
+      echo $_POST['mail']."<br/>";
 
-echo "¡El formulario se ha enviado con éxito!";
-}
+      $correos = new correos("beito_xp@me.com", $_POST['mail'], $_POST['asunto'], $_POST['comentario']);
+
+      echo "<b>".$correos->envio()."</b><br/>";
+
+    }
+
+  }
+
 ?>
 
 <html>
