@@ -2,7 +2,7 @@
 
   require_once("correos.php");
 
-  $mensaje = "sss";
+  $mensaje = "";
 
   if(isset($_POST['mail']))
 
@@ -31,6 +31,18 @@
 
   }
 
+  $nombreGaleria = "Galeria de Arte: Amazonas";
+  //$nombreGaleria = $Variable->BaseDatos();
+
+  $dominio = "oldlaser.com/Galeria/contactanos.php";
+  //$dominio = $Variable->BaseDatos();
+
+  $direccion = "Mall Multiplaza, Tegucigalpa.";
+  //$numero = $Variable->BaseDatos();
+
+  $numero = "(504) 2231-2024";
+  //$numero = $Variable->BaseDatos();
+
 ?>
 
 <html>
@@ -48,13 +60,19 @@
     <div id="centro">
       <div class="titulo">
 
-        <p id="elTitulo">
+        <p class="elTitulo">
           Contactanos
         </p>
 
       </div>
       <div id="izquierda">
-        <div id="informacion"></div>
+        <div id="informacion">
+        <p class="elTitulo">Información</p>
+        <p class="parrafos"><b>Nombre: </b><?php echo $nombreGaleria; ?></p>
+        <p class="parrafos"><b>Dominio: </b><?php echo $dominio; ?></p>
+        <p class="parrafos"><b>Dirección: </b><?php echo $direccion; ?></p>
+        <p class="parrafos"><b>Número: </b><?php echo $numero; ?></p>
+        </div>
         <div id="redesSociales"></div>
       </div>
       <div id="derecha">
@@ -115,6 +133,7 @@
         </div>
       </div>
       <div class="clear"></div>
+      <?php echo '<div id="error"><p class="elError"><b>'.$mensaje.'</b></p></div>' ?>
     </div>
     <script type="text/javascript">
       var sprytextfield1 = new Spry.Widget.ValidationTextField("sprytextfield1");
