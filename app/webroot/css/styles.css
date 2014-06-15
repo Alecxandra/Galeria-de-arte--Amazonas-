@@ -220,7 +220,8 @@ section {
 }
 
 .bg-1 {
-	background: url('http://www.bootply.com/assets/example/bg_suburb.jpg') no-repeat center center fixed; 
+ background: url('/cakephp-cake/img/Local/pinturas1.jpg')no-repeat center center fixed;
+    /*url('http://www.bootply.com/assets/example/bg_suburb.jpg') no-repeat center center fixed;*/ 
     -webkit-background-size: cover;
   	-moz-background-size: cover;
   	-o-background-size: cover;

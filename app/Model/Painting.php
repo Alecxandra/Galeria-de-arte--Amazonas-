@@ -102,5 +102,7 @@ class Painting extends AppModel {
             'foreignKey' => 'id_type'
         )
     );
+  
+  public $actsAs = array('Containable');
  
 }

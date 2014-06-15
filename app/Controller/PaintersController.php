@@ -24,8 +24,11 @@ class PaintersController extends AppController {
      $this->loadModel('Painter');
        if ($this->request->is('get')) {
        $this->request->named['id'];
-       $painters=$this->Painter->find('all',array('conditions' => array('id_painter' =>$this->request->named['id_painter'])));
-         
+       $painters=$this->Painter->find('all',
+                                      array(
+                                        'conditions' => array('id_painter' =>$this->request->named['id_painter']),
+                                        'contain' => array('Painting' => array('Technique')), 
+                                      ));
      $this->set('painters', $painters);
     }
   }
