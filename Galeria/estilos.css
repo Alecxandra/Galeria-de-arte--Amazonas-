@@ -77,6 +77,20 @@ body
 
 }
 
+.fb-like-box
+
+{
+
+	border-radius: 10px;
+	position:relative;
+	margin: 0px auto;
+	margin-left: 9%;
+	margin-bottom: 20px;
+	background-color: white;
+	border: 0px;
+
+}
+
 #map
 {
 
@@ -96,7 +110,6 @@ body
 	margin: 0px auto;
 	margin-top:25px;
 }
-
 
 #derecha
 
@@ -119,7 +132,6 @@ body
 	border-radius:10px;
 	float:left;
 	width: 41%;
-	height:375px;
 	min-width: 365px;
 	margin-top:40px;
 	margin-left:40px;

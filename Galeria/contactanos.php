@@ -43,6 +43,9 @@
   $numero = "(504) 2231-2024";
   //$numero = $Variable->BaseDatos();
 
+  $correo = "jempeza@hotmail.com";
+  //$correo = $Variable->BaseDatos();
+
 ?>
 
 <html>
@@ -56,7 +59,32 @@
   </head>
 
   <body>
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '{your-app-id}',
+          xfbml      : true,
+          version    : 'v2.0'
+        });
+      };
 
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&appId=771688632852651&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
     <div id="centro">
       <div class="titulo">
 
@@ -72,8 +100,11 @@
         <p class="parrafos"><b>Dominio: </b><?php echo $dominio; ?></p>
         <p class="parrafos"><b>Dirección: </b><?php echo $direccion; ?></p>
         <p class="parrafos"><b>Número: </b><?php echo $numero; ?></p>
+        <p class="parrafos"><b>Correo: </b><?php echo $correo; ?></p>
         </div>
-        <div id="redesSociales"></div>
+        <div id="redesSociales">
+          <div class="fb-like-box" data-href="https://www.facebook.com/ninewest?fref=ts" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="false" data-show-border="true"></div>
+        </div>
       </div>
       <div id="derecha">
         <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
