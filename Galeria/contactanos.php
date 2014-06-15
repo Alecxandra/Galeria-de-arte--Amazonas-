@@ -2,6 +2,26 @@
 
   require_once("correos.php");
 
+  $green = false;
+
+  $contador = 0;
+
+  if(isset($_COOKIE['contador']))
+  {
+
+    setcookie('contador', $_COOKIE['contador'] + 1, time() + 24 * 60 * 60);
+    $contador = $_COOKIE['contador'];
+
+  }
+
+  else
+
+  {
+
+    setcookie('contador', 0, time() + 24 * 60 * 60);
+
+  }
+
   $mensaje = "";
 
   if(isset($_POST['mail']))
@@ -12,8 +32,7 @@
 
     {
 
-      echo "<b>Ocurrió un error y el formulario no ha sido enviado. </b><br />";
-      echo "Por favor, vuelva atrás y verifique la información ingresada<br />";
+      $mensaje = "Ocurrió un error y el formulario no ha sido enviado.";
 
       die();
 
@@ -23,9 +42,31 @@
 
     {
 
-      $correos = new correos("beito_xp@me.com", $_POST['mail'], $_POST['asunto'], $_POST['comentario']);
+      if($contador < 5)
 
-      $mensaje = $correos->envio();
+      {
+
+        $correos = new correos("beito_xp@me.com", $_POST['mail'], $_POST['asunto'], $_POST['comentario']);
+
+        $mensaje = $correos->envio();
+
+        if($mensaje == "¡Tu mensaje ha sido enviado con éxito!")
+
+        {
+
+          $green = true;
+
+        }
+
+      }
+
+      else
+
+      {
+
+        $mensaje = "No se permiten más envios, por hoy.";
+
+      }
 
     }
 
@@ -47,7 +88,6 @@
   //$correo = $Variable->BaseDatos();
 
 ?>
-
 <html>
 
   <head xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
@@ -164,7 +204,25 @@
         </div>
       </div>
       <div class="clear"></div>
-      <?php echo '<div id="error"><p class="elError"><b>'.$mensaje.'</b></p></div>' ?>
+      <?php
+
+        if($green)
+
+        {
+
+          echo '<div id="error"><p class="elErrorV"><b>'.$mensaje.'</b></p></div>';
+
+        }
+
+        else
+
+        {
+
+          echo '<div id="error"><p class="elErrorR"><b>'.$mensaje.'</b></p></div>';
+
+        }
+
+      ?>
     </div>
     <script type="text/javascript">
       var sprytextfield1 = new Spry.Widget.ValidationTextField("sprytextfield1");
@@ -172,5 +230,4 @@
 			var sprytextfield3 = new Spry.Widget.ValidationTextField("sprytextfield3", "email");
 		</script>
   </body>
-
 </html>

@@ -44,7 +44,7 @@ body
 
 }
 
-.elError
+.elErrorR
 
 {
 
@@ -52,6 +52,17 @@ body
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 	font-size:100%;
 	color: rgba(208,1,27,0.49);
+
+}
+
+.elErrorV
+
+{
+
+	text-align: center;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	font-size:100%;
+	color: rgba(65,117,5,0.65);
 
 }
 
