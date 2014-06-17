@@ -18,7 +18,7 @@ class GalleryInformation extends AppModel {
  *
  * @var string
  */
-	public $primaryKey = 'n';
+	public $primaryKey = 'galeria_id';
 
 /**
  * Validation rules

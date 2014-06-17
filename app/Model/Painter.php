@@ -77,10 +77,13 @@ class Painter extends AppModel {
 			),
 		),
 	);
-  
+ 
   public $hasMany = array(
         'Painting' => array(
             'className' => 'Painting',
-        )
+            'foreignKey' => 'id_painter',
+        ) 
     );
+  
+  public $actsAs = array('Containable');
 }
