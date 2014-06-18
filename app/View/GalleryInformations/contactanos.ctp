@@ -130,7 +130,7 @@
       {
 
         center: new google.maps.LatLng(14.0880735,-87.1832608),
-        zoom: 18,
+        zoom: 17,
         mapTypeId: google.maps.MapTypeId.ROADMAP
 
       };
@@ -154,7 +154,7 @@
 
       {
 
-        content: '<IMG BORDER="0" name="slide" ALIGN="Left" SRC="amazonas.png">'
+        content: '<IMG BORDER="0" name="slide" width=350"" height="200" he ALIGN="Left" SRC="../app/webroot/img/Local/local1.png">'
 
       };
 

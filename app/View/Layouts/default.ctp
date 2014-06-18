@@ -61,7 +61,6 @@
           </li>
            <li><a href="#section2">Quienes somos</a></li>
           <li><a href="#section4"><?php echo $this->Html->link('Contactanos', array('controller' => 'GalleryInformations', 'action' => 'contactanos'));?></a></li>
-          <li><a href="#section5">Login</a></li>
         </ul>
       </div><!--/.nav-collapse -->
     </div><!--/.container -->
