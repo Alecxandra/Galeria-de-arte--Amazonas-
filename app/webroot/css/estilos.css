@@ -1,0 +1,180 @@
+
+#centro
+
+{
+
+	width:70%;
+	min-width:890px;
+	margin: 0px auto;
+	margin-top: 3%;
+	margin-bottom: 3%;
+  background-color:#BDAFA2;
+  border-radius:25px;
+
+}
+
+.titulo
+
+{
+
+	margin: 0px auto;
+	padding-top:15px;
+	max-width:300px;
+	top:2.5%;
+
+}
+
+.elTitulo
+
+{
+
+	text-align: center;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	font-size:300%;
+	color: white;
+	margin-top:5px;
+	margin-bottom:5px;
+
+}
+
+.elErrorR
+
+{
+
+	text-align: center;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	font-size:100%;
+	color: rgba(208,1,27,0.49);
+
+}
+
+.elErrorV
+
+{
+
+	text-align: center;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	font-size:100%;
+	color: rgba(65,117,5,0.65);
+
+}
+
+#error
+
+{
+
+	padding-bottom:15px;
+
+}
+
+.parrafos
+
+{
+
+	text-align: left;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	font-size:100%;
+	color: white;
+	margin-top:25px;
+	margin-bottom:25px;
+	margin-left: 10px;
+
+}
+
+.fb-like-box
+
+{
+
+	border-radius: 10px;
+	position:relative;
+	margin: 0px auto;
+	margin-left: 9%;
+	margin-bottom: 20px;
+	background-color: white;
+	border: 0px;
+
+}
+
+#map
+{
+
+	border-radius:10px;
+  height: 350px;
+	width: 350px;
+	position:relative;
+  margin: 0px auto;
+	margin-top:25px;
+}
+
+#divFormulario
+{
+
+	width: 350px;
+	position:relative;
+	margin: 0px auto;
+	margin-top:25px;
+}
+
+#derecha
+
+{
+
+	border-radius:10px;
+	float:right;
+	width: 45%;
+	min-width: 400px;
+	margin-top:40px;
+	margin-right:40px;
+	margin-bottom:20px;
+	border: 2px solid #FFFFFF;
+}
+
+#izquierda
+
+{
+
+	border-radius:10px;
+	float:left;
+	width: 41%;
+	min-width: 365px;
+	margin-top:40px;
+	margin-left:40px;
+	margin-bottom:20px;
+	border: 2px solid #FFFFFF;
+
+}
+
+.elemento
+
+{
+
+	margin-top:10px;
+	margin-bottom:10px;
+	width: 350px;
+	height: 30px;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	font-size:20px;
+	background-color: rgba(255,254,255,0.50);
+	border: 0px solid;
+
+}
+
+#envios
+
+{
+
+	margin-bottom: 0px;
+
+}
+
+#dimension
+
+{
+
+	height: 125px;
+
+}
+
+.clear {
+	clear:both;
+}

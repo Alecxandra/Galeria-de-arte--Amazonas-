@@ -185,7 +185,7 @@ h1 {
 
 @media (max-width: 768px) {
 	header {
-	
+
 	}
 }
 
@@ -254,3 +254,17 @@ section {
     max-height:400px;
   width:600px;
 }
+
+.maximize {
+  background-color: rgba(0, 0, 0, 0);
+  height: 95%;
+  margin: 0;
+  padding: 0;
+}
+
+.carousel-caption > img {
+  min-width: 10% !important;
+  width: 30%;
+  height: auto;
+}
+

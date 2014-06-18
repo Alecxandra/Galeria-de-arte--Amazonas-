@@ -6,13 +6,39 @@
 		echo $this->Html->charset('utf-8');
 		echo $this->Html->css(array(
         'bootstrap.min',
-        'styles',
+        'styles','SpryValidationTextField','estilos',
 			));
 	?>
+ 
 </head>
 <body>
      <!-- Barra principal-->
+<script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '{your-app-id}',
+          xfbml      : true,
+          version    : 'v2.0'
+        });
+      };
 
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&appId=771688632852651&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
   <!-- Fixed navbar -->
 <div class="navbar navbar-custom navbar-inverse navbar-static-top" id="nav">
     <div class="container">
@@ -35,8 +61,8 @@
             </ul>
           </li>
            <li><a href="#section2">Quienes somos</a></li>
-          <li><a href="#section4">Contactanos</a></li>
-          <li><a href="#section5">Login</a></li>
+          <li><?php echo $this->Html->link('Contactanos', array('controller' => 'GalleryInformations', 'action' => 'contactanos'));?></li>
+          <li><?php echo $this->Html->link('Login', array('controller' => 'Users', 'action' => 'login'));?></li>
         </ul>
       </div><!--/.nav-collapse -->
     </div><!--/.container -->
@@ -53,9 +79,13 @@
 			'http://code.jquery.com/jquery-2.1.1.js',
     'bootstrap.min',
        'main',
-       'scripts',
+       'scripts','SpryValidationTextField',
 		)); 
 	?>
- 
+ <script type="text/javascript">
+      var sprytextfield1 = new Spry.Widget.ValidationTextField("sprytextfield1");
+      var sprytextfield2 = new Spry.Widget.ValidationTextField("sprytextfield2");
+			var sprytextfield3 = new Spry.Widget.ValidationTextField("sprytextfield3", "email");
+  </script>
 </body>
 </html>
