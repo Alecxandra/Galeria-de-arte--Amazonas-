@@ -60,9 +60,49 @@
                 <li><?php echo $this->Html->link('Pintores', array('controller' => 'Painters', 'action' => 'artists'));?></li>
             </ul>
           </li>
-           <li><a href="#section2">Quienes somos</a></li>
+           <li><?php echo $this->Html->link('Agregar', array('controller' => 'Users', 'action' => 'add'));?></li>
           <li><?php echo $this->Html->link('Contactanos', array('controller' => 'GalleryInformations', 'action' => 'contactanos'));?></li>
-          <li><?php echo $this->Html->link('Login', array('controller' => 'Users', 'action' => 'login'));?></li>
+          <?php if (AuthComponent::user('id_user')): ?>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Administración <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><?php echo $this->Html->link('Pinturas', array(
+                      'controller' => 'paintings',
+                      'action' => 'index',
+                    )); ?>
+              </li>
+              <li><?php echo $this->Html->link('Pintores', array('controller' => 'painters', 'action' => 'index')); ?></li>
+            </ul>
+          </li>
+          <?php endif; ?>
+          <li class="dropdown">
+            <?php if (!AuthComponent::user('id_user')): ?>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Login <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li>
+                  <div class="users form" style="padding: 20px">
+                      <?php echo $this->Session->flash('auth'); ?>
+                      <?php echo $this->Form->create('User', array('controller' => 'user', 'action' => 'login', 'class' => 'form-horizontal')); ?>
+                          <fieldset>
+                              <?php 
+                                    echo $this->Form->input('username', array('div' => 'form-group', 'class' => 'form-control', 'label' => false, 'placeholder' => 'Usuario'));
+                                    echo $this->Form->input('password', array('div' => 'form-group', 'class' => 'form-control', 'label' => false, 'placeholder' => 'Contraseña'));
+                              ?>
+                          </fieldset>
+                      <?php echo $this->Form->submit('Entrar', array('class' => 'btn btn-info btn-sm')); ?>
+                      <?php echo $this->Form->end(); ?>
+                  </div> 
+                  <?php else: ?>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo AuthComponent::user('username') ?> <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><?php echo $this->Html->link('Salir', array('controller' => 'users', 'action' => 'logout')); ?></li>
+                  </ul>
+                  <?php endif; ?>
+              </li>                 
+              </ul>
+      
+          </li>
+
         </ul>
       </div><!--/.nav-collapse -->
     </div><!--/.container -->

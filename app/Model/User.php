@@ -1,5 +1,6 @@
 <?php
 App::uses('AppModel', 'Model');
+App::uses('SimplePasswordHasher', 'Controller/Component/Auth');
 /**
  * User Model
  *
@@ -19,7 +20,7 @@ class User extends AppModel {
  * @var array
  */
 	public $validate = array(
-		'user_name' => array(
+		'username' => array(
 			'notEmpty' => array(
 				'rule' => array('notEmpty'),
 				//'message' => 'Your custom message here',
@@ -29,7 +30,7 @@ class User extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'user_password' => array(
+		'password' => array(
 			'notEmpty' => array(
 				'rule' => array('notEmpty'),
 				//'message' => 'Your custom message here',
@@ -40,4 +41,14 @@ class User extends AppModel {
 			),
 		),
 	);
+  
+  public function beforeSave($options = array()) {
+    if (isset($this->data[$this->alias]['password'])) {
+        $passwordHasher = new SimplePasswordHasher();
+        $this->data[$this->alias]['password'] = $passwordHasher->hash(
+            $this->data[$this->alias]['password']
+        );
+    }
+    return true;
+}
 }

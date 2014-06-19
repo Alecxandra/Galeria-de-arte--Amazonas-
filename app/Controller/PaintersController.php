@@ -2,6 +2,10 @@
 App::uses('AppController', 'Controller');
 
 class PaintersController extends AppController {
+  public function beforeFilter() {
+    $this->Auth->allow('artists', 'painter', 'paintings_painter');
+  }
+  
   var $id_actual;
   
   public function artists(){
@@ -30,6 +34,21 @@ class PaintersController extends AppController {
                                         'contain' => array('Painting' => array('Technique')), 
                                       ));
      $this->set('painters', $painters);
+    }
+  }
+  
+  public function index() {
+    $painters = $this->Painter->find('all');
+    $this->set('painters', $painters);
+  }
+  
+  public function add() {
+    if (!empty($this->request->data)) {
+      if ($this->Painter->save($this->request->data)) {
+          $this->Session->setFlash('Pintor guardado con éxito.');
+      } else {
+        $this->Session->setFlash('El pintor no se pudo ingresar.');
+      }
     }
   }
 

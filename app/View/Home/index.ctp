@@ -14,11 +14,11 @@
       </ol>
       <div class="carousel-inner" >
         <div class="item active" >
-         <?php echo $this->Html->image("Local/pinturas.jpg",array('style' => 'opacity:0.8;filter: alpha(opacity=80);')) ?>
+         <?php echo $this->Html->image("Local/pinturas.jpg",array('style' => 'opacity:0.6;filter: alpha(opacity=60);')) ?>
           <div class="container" >
            <div class="carousel-caption maximize">
              <div align="center">
-             <img src="/cakephp-cake/img/Local/amazonas.png" style="height: 95%; width:50%;">
+             <img src="/cakephp-cake/img/Local/logo-amazonas.png" style="height: 95%; width:50%;">
              </div>
              </div>
           </div>
