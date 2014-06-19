@@ -59,13 +59,14 @@
                 <li><?php echo $this->Html->link('Pintores', array('controller' => 'Painters', 'action' => 'artists'));?></li>
             </ul>
           </li>
-           <li><a href="#section2">Quienes somos</a></li>
+           <li><a href="#section2"><?php echo $this->Html->link('Quienes Somos', array('controller' => 'quienes', 'action' => 'quienesomos'));?></</a></li>
           <li><a href="#section4"><?php echo $this->Html->link('Contactanos', array('controller' => 'GalleryInformations', 'action' => 'contactanos'));?></a></li>
+					<li><a href="#section5"><?php echo $this->Html->link('Ingresa', array('controller' => 'users', 'action' => 'admin'));?></a></li>
         </ul>
       </div><!--/.nav-collapse -->
     </div><!--/.container -->
 </div><!--/.navbar -->
-
+</br>
 	<main>
     <?php echo $this->Session->flash('flash', array('element' => 'failure')); ?>
     <?php echo $this->Session->flash('flash', array('element' => 'success')); ?>

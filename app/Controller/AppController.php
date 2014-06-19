@@ -48,7 +48,7 @@ class AppController extends Controller {
     );
 
     public function beforeFilter() {
-        $this->Auth->allow('index','contactanos','artists','painter','paintings_painter','gallery','carousel');
+        $this->Auth->allow('index','contactanos','quienesomos','artists','painter','paintings_painter','gallery','carousel');
     }
 
 }

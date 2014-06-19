@@ -94,6 +94,9 @@
 
 ?>
 
+</br>
+</br>
+
 <div id="centro">
 
   <div class="titulo">

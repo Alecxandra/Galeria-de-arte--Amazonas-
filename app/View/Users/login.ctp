@@ -1,14 +1,19 @@
-
+</br>
+</br>
+<div id="centro">
 <div class="users form">
-<?php echo $this->Session->flash('auth'); ?>
+  <div class="nada" style="margin: 0px auto">
+<?php $this->Session->flash('auth'); ?>
 <?php echo $this->Form->create('User'); ?>
-    <fieldset>
-        <legend>
-            <?php echo __('Please enter your username and password'); ?>
+    <fieldset style="margin: 0px auto">
+        <legend class="logTitulo">
+            <?php echo __('Ingresa tu cuenta y tu contraseña.'); ?>
         </legend>
         <?php echo $this->Form->input('username');
         echo $this->Form->input('password');
         ?>
     </fieldset>
-<?php echo $this->Form->end(__('Login')); ?>
+    <input type="submit" class="elemento" value="Login">
+  </div>
+</div>
 </div>

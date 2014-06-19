@@ -11,7 +11,7 @@ public function login() {
         if ($this->Auth->login()) {
 
           //A
-            return $this->redirect(array('controller' => 'home', 'action' => 'index', 'home'));
+            return $this->redirect(array('controller' => 'users', 'action' => 'admin'));
         }
         $this->Session->setFlash(__('Invalid username or password, try again'));
     }
@@ -40,7 +40,7 @@ public function logout() {
             if ($this->User->save($this->request->data)) {
                 $this->Session->setFlash(__('The user has been saved'));
                 //A
-                return $this->redirect(array('controller' => 'home', 'action' => 'index', 'home'));
+                return $this->redirect(array('controller' => 'users', 'action' => 'admin'));
             }
             $this->Session->setFlash(
                 __('The user could not be saved. Please, try again.')
@@ -81,6 +81,8 @@ public function logout() {
         $this->Session->setFlash(__('User was not deleted'));
         return $this->redirect(array('action' => 'index'));
     }
+
+    public function admin() {}
 
 //$this->Html->url(array('controller' => 'GalleryInformations', 'action' => 'contactanos'));
 
