@@ -5,7 +5,9 @@ App::uses('SimplePasswordHasher', 'Controller/Component/Auth');
  * User Model
  *
  */
-class User extends AppModel {
+class User extends AppModel
+
+{
 
 /**
  * Primary key field
@@ -19,28 +21,39 @@ class User extends AppModel {
  *
  * @var array
  */
-    public $validate = array(
+
+	public $validate = array(
         'username' => array(
-            'required' => array(
-                'rule' => array('notEmpty'),
-                'message' => 'El nombre del administrador es requerido.'
+        'required' => array(
+        'rule' => array('notEmpty'),
+        'message' => 'El nombre del administrador es requerido.'
             )
         ),
         'password' => array(
-            'required' => array(
-                'rule' => array('notEmpty'),
-                'message' => 'El password del administrador es requerido.'
+        'required' => array(
+        'rule' => array('notEmpty'),
+        'message' => 'El password del administrador es requerido.'
             )
         )
     );
 
-		public function beforeSave($options = array()) {
-    if (isset($this->data[$this->alias]['password'])) {
-        $passwordHasher = new SimplePasswordHasher();
-        $this->data[$this->alias]['password'] = $passwordHasher->hash(
-            $this->data[$this->alias]['password']
-        );
+	public function beforeSave($options = array())
+
+	{
+
+    if (isset($this->data[$this->alias]['password']))
+
+		{
+
+      $passwordHasher = new SimplePasswordHasher();
+      $this->data[$this->alias]['password'] = $passwordHasher->hash(
+      $this->data[$this->alias]['password']
+      );
+
     }
+
     return true;
-}
+
+	}
+	
 }

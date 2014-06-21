@@ -1,30 +1,52 @@
 <?php
-class UsersController extends AppController {
+
+class UsersController extends AppController
+
+{
 
     public function beforeFilter() {
         parent::beforeFilter();
         $this->Auth->allow('add', 'logout');
     }
 
-public function login() {
-    if ($this->request->is('post')) {
-        if ($this->Auth->login()) {
+  public function index()
 
-          //A
-            return $this->redirect(array('controller' => 'users', 'action' => 'admin'));
-        }
-        $this->Session->setFlash(__('Invalid username or password, try again'));
+  {
+
+    $this->redirect(array('controller' => 'home', 'action' => 'index'));
+
+  }
+
+  public function login()
+
+  {
+
+    if ($this->request->is('post'))
+
+    {
+
+      if ($this->Auth->login())
+
+      {
+
+        return $this->redirect(array('controller' => 'home', 'action' => 'index'));
+
+      }
+
+      $this->Session->setFlash(__('Invalid username or password, try again'));
+
     }
-}
 
-public function logout() {
+  }
+
+  public function logout()
+
+  {
+
     return $this->redirect($this->Auth->logout());
-}
 
-    public function index() {
-        $this->User->recursive = 0;
-        $this->set('users', $this->paginate());
-    }
+  }
+
 
     public function view($id = null) {
         $this->User->id = $id;
@@ -34,18 +56,31 @@ public function logout() {
         $this->set('user', $this->User->read(null, $id));
     }
 
-    public function add() {
-        if ($this->request->is('post')) {
-            $this->User->create();
-            if ($this->User->save($this->request->data)) {
-                $this->Session->setFlash(__('The user has been saved'));
-                //A
-                return $this->redirect(array('controller' => 'users', 'action' => 'admin'));
-            }
-            $this->Session->setFlash(
+    public function add()
+
+    {
+
+      if ($this->request->is('post'))
+
+      {
+
+        $this->User->create();
+
+        if ($this->User->save($this->request->data))
+
+        {
+
+          $this->Session->setFlash(__('The user has been saved'));
+
+          return $this->redirect(array('action' => 'index'));
+
+        }
+
+        $this->Session->setFlash(
                 __('The user could not be saved. Please, try again.')
             );
-        }
+      }
+
     }
 
     public function edit($id = null) {

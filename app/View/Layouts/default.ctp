@@ -61,7 +61,45 @@
           </li>
            <li><a href="#section2"><?php echo $this->Html->link('Quienes Somos', array('controller' => 'quienes', 'action' => 'quienesomos'));?></</a></li>
           <li><a href="#section4"><?php echo $this->Html->link('Contactanos', array('controller' => 'GalleryInformations', 'action' => 'contactanos'));?></a></li>
-					<li><a href="#section5"><?php echo $this->Html->link('Ingresa', array('controller' => 'users', 'action' => 'admin'));?></a></li>
+					<?php if (AuthComponent::user('id_user')): ?>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Administración <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><?php echo $this->Html->link('Pinturas', array(
+                      'controller' => 'paintings',
+                      'action' => 'index',
+                    )); ?>
+              </li>
+              <li><?php echo $this->Html->link('Pintores', array('controller' => 'painters', 'action' => 'index')); ?></li>
+            </ul>
+          </li>
+          <?php endif; ?>
+					          <li class="dropdown">
+            <?php if (!AuthComponent::user('id_user')): ?>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Login <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li>
+                  <div class="users form" style="padding: 20px">
+                      <?php echo $this->Session->flash('auth'); ?>
+                      <?php echo $this->Form->create('User', array('controller' => 'user', 'action' => 'login', 'class' => 'form-horizontal')); ?>
+                          <fieldset>
+                              <?php
+                                    echo $this->Form->input('username', array('div' => 'form-group', 'class' => 'form-control', 'label' => false, 'placeholder' => 'Usuario'));
+                                    echo $this->Form->input('password', array('div' => 'form-group', 'class' => 'form-control', 'label' => false, 'placeholder' => 'Contraseña'));
+                              ?>
+                          </fieldset>
+                      <?php echo $this->Form->submit('Entrar', array('class' => 'btn btn-info btn-sm')); ?>
+                      <?php echo $this->Form->end(); ?>
+                  </div>
+                  <?php else: ?>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo AuthComponent::user('username') ?> <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><?php echo $this->Html->link('Salir', array('controller' => 'users', 'action' => 'logout')); ?></li>
+                  </ul>
+                  <?php endif; ?>
+              </li>
+              </ul>
+          </li>
         </ul>
       </div><!--/.nav-collapse -->
     </div><!--/.container -->

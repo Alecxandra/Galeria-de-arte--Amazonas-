@@ -1,8 +1,5 @@
-</br>
-</br>
-<div id="centro">
+
 <div class="users form">
-  <div class="nada" style="margin: 0px auto">
 <?php $this->Session->flash('auth'); ?>
 <?php echo $this->Form->create('User'); ?>
     <fieldset style="margin: 0px auto">
@@ -14,6 +11,5 @@
         ?>
     </fieldset>
     <input type="submit" class="elemento" value="Login">
-  </div>
-</div>
+
 </div>
