@@ -6,7 +6,7 @@
   <?php echo $this->Form->input('painter_birthday', array('empty' => false, 'class' => 'form-control', 'div' => 'form-group','label' => false)); ?>
   <?php echo $this->Form->input('painter_cityofbirth', array('empty' => false, 'class' => 'form-control', 'div' => 'form-group', 'placeholder' => 'Ciudad de nacimiento', 'label' => false)); ?>
   <?php echo $this->Form->input('painter_countryofbirth', array('class' => 'form-control', 'div' => 'form-group', 'label' => false, 'placeholder' => 'País de nacimiento')); ?>
-  <?php echo $this->Form->input('biography', array('empty' => false, 'class' => 'form-control', 'div' => 'form-group', 'label' => false, 'type' => 'text', 'placeholder' => 'Biografía', 'type' => 'textarea')); ?> 
+  <?php echo $this->Form->input('biography', array('empty' => false, 'class' => 'form-control', 'div' => 'form-group', 'label' => false, 'type' => 'text', 'placeholder' => 'Biografía', 'type' => 'textarea')); ?>
   <?php echo $this->Form->submit('Guardar', array('class' => 'btn btn-primary', 'div' => 'row')); ?>
   <br><br>
   <?php echo $this->Form->end(); ?>

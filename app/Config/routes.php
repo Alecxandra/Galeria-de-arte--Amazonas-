@@ -33,6 +33,8 @@
 	Router::connect('/users/login/*', array('controller' => 'users', 'action' => 'login'));
 	Router::connect('/users/add/*', array('controller' => 'users', 'action' => 'add'));
 	Router::connect('/users/*', array('controller' => 'users', 'action' => 'admin'));
+	Router::connect('/painters/edit/:id',array('controller' => 'painters', 'action' => 'edit'),
+    							array('pass' => array('class' , 'id'),'id' => '[0-9]+'));
 
 /**
  * Load all plugin routes. See the CakePlugin documentation on

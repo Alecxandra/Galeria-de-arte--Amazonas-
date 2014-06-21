@@ -62,9 +62,58 @@ class PaintersController extends AppController
   public function index()
 
   {
-
+    $this->loadModel('Painter');
     $painters = $this->Painter->find('all');
     $this->set('painters', $painters);
+
+  }
+
+  public function edit($id)
+
+  {
+
+    $this->loadModel('Painter');
+
+    if($this->request->is('post'))
+
+    {
+
+      $this->Painter->id = $id;
+
+      if (!$this->Painter->exists())
+
+      {
+
+          throw new NotFoundException(__('El Usuario no Existe'));
+
+      }
+
+      else
+
+      {
+
+        $this->add();
+        return $this->redirect(array('controller'=>'painters', 'action' => 'index'));
+
+      }
+
+    }
+
+    else
+
+    {
+
+      if ($this->request->is('get'))
+
+      {
+
+        $painters=$this->Painter->find('all',
+        array('id_painter' => $id));
+        $this->set('painters', $painters[($id-1)]['Painter']);
+
+      }
+
+    }
 
   }
 
@@ -85,7 +134,7 @@ class PaintersController extends AppController
       }
 
       else
-      
+
       {
 
         $this->Session->setFlash('El pintor no se pudo ingresar.');
