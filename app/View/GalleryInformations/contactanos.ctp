@@ -1,72 +1,70 @@
 <?php
+  class validacion
+     {
 
-class validacion
+    private $campo;
 
-{
-
-  private $campo;
-
-  private function Inyeccion($campo)
-
-  {
-
-    if (PHP_VERSION < 6)
+    private function Inyeccion($campo)
 
     {
 
-        return get_magic_quotes_gpc() ? stripslashes($campo) : $campo;
+      if (PHP_VERSION < 6)
+
+      {
+
+          return get_magic_quotes_gpc() ? stripslashes($campo) : $campo;
+
+      }
+
+      return function_exists("mysql_real_escape_string") ? mysql_real_escape_string($campo) : mysql_escape_string($campo);
 
     }
 
-    return function_exists("mysql_real_escape_string") ? mysql_real_escape_string($campo) : mysql_escape_string($campo);
+    function setCampo($campo)
 
-  }
+    {
 
-  function setCampo($campo)
+      $this->campo = $this->Inyeccion($campo);
 
-  {
+    }
 
-    $this->campo = $this->Inyeccion($campo);
+    function Texto()
 
-  }
+    {
 
-  function Texto()
+      if($this->campo != "")
 
-  {
+  		{
 
-    if($this->campo != "")
+  			$soloAlfa = str_replace(' ', 'a', $this->campo);
 
-		{
+  			if (ctype_alpha($soloAlfa))
 
-			$soloAlfa = str_replace(' ', 'a', $this->campo);
+  			{
 
-			if (ctype_alpha($soloAlfa))
+  				return $this->campo;
 
-			{
+      	}
 
-				return $this->campo;
+      	else
 
-    	}
+  			{
+
+    			return "INVALIDO";
+
+      	}
+
+      }
 
     	else
 
-			{
+  		{
 
-  			return "INVALIDO";
+  			return "NULO";
 
-    	}
+  		}
 
     }
-
-  	else
-
-		{
-
-			return "NULO";
-
-		}
-
-  }
 
   function Correo()
 
@@ -331,23 +329,6 @@ class validacion
 
   $green = false;
 
-/*  $contador = 0;
-
-  if(isset($_COOKIE['contador']))
-  {
-
-    setcookie('contador', $_COOKIE['contador'] + 1, time() + 24 * 60 * 60);
-    $contador = $_COOKIE['contador'];
-
-  }
-
-  else
-
-  {
-
-    setcookie('contador', 0, time() + 24 * 60 * 60);
-
-  }*/
 
   $mensaje = "";
 
@@ -369,10 +350,7 @@ class validacion
 
     {
 
-      /*if($contador < 5)
-
-      {*/
-
+     
         $correos = new correos("alecxandra.cruz@unitec.edu", $_POST['mail'], $_POST['asunto'], $_POST['comentario']);
 
         $mensaje = $correos->envio();
@@ -385,80 +363,47 @@ class validacion
 
         }
 
-      /*}
-
-      else
-
-      {
-
-        $mensaje = "No se permiten más envios, por hoy.";
-
-      }*/
+      
 
     }
 
   }
 
- /* $contacto = $gallery[0];
-  $contacto = $contacto['GalleryInformation'];
 
-  $nombreGaleria = $contacto['gallery_name'];
-  //$nombreGaleria = $Variable->BaseDatos();
-
-  $dominio = $contacto['url'];
-  //$dominio = $Variable->BaseDatos();
-
-  $direccion = $contacto['gallery_address'];
-  //$numero = $Variable->BaseDatos();
-
-  $numero = $contacto['gallery_phonenumber1'];
-  //$numero = $Variable->BaseDatos();
-
-  $correo = $contacto['gallery_email'];
-  //$correo = $Variable->BaseDatos();
-*/
   $redireccionar = $this->Html->url(array('controller' => 'gallery_informations', 'action' => 'contactanos'));
 
 ?>
-<br><br>
-<div id="centro">
-
-  <div class="titulo">
-
-    <p class="elTitulo">Contactenos</p>
-
-  </div>
-
-  <div id="izquierda">
-
-    <div id="informacion">
-      <p class="elTitulo">Información</p>
-      <p class="parrafos"><b>Dominio: </b>www.AmazonasGallery.com</p>
-      <p class="parrafos"><b>Dirección: </b> Mall Multiplaza, Tegucigalpa.</p>
-      <p class="parrafos"><b>Número: </b>(504) 2231-2024</p>
-      <p class="parrafos"><b>Correo: </b>jempeza@hotmail.com</p>
-    </div>
-
-    <div id="redesSociales">
-      <div class="fb-like-box" data-href="https://www.facebook.com/amazonas.galeria" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="false" data-show-border="true"></div>
-    </div>
-
-  </div>
-
-  <div id="derecha">
-
+<br><br><br>
+<H1 align="center">Contactenos</H1><br><br>
+<div class="jumbotron">
+  <div class="container">
+       
+    <table align="center">
+    <tr>
+      <td >
+        <?php echo $this->Html->image("Local/amazonas.png",array('style' => 'height: 360px;width:360px; margin-right: 70px;'));?>
+      </td>
+      <td>
+       <H1 align="center">Información</H1><br><br>
+                   <p ><b>Dominio: </b>www.AmazonasGallery.com</p><br>
+                   <p ><b>Dirección: </b> Mall Multiplaza, Tegucigalpa.</p><br>
+             <p ><b>Correo: </b>jempeza@hotmail.com</p><br>  
+                   <p ><b>Número: </b>(504) 2231-2024</p>
+      </td>
+    </tr>  
+    </table><br><br>
+    
     <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
-    <div id="map"></div>
-    <script>
+                <div id="map"></div>
+       <script>
 
       var mapOptions =
 
       {
 
-        center: new google.maps.LatLng(14.0880735,-87.1832608),
-        zoom: 18,
+     center: new google.maps.LatLng(14.0880735,-87.1832608),
+        zoom: 17,
         mapTypeId: google.maps.MapTypeId.ROADMAP
-
       };
 
       var map = new google.maps.Map(document.getElementById('map'), mapOptions);
@@ -467,8 +412,8 @@ class validacion
 
       {
 
-        position: new google.maps.LatLng(14.0880735, -87.1832608),
-        title: "Hello World!"
+      position: new google.maps.LatLng(14.0880735, -87.1832608),
+        title: "Galeria Amazonas"
 
       };
 
@@ -480,7 +425,7 @@ class validacion
 
       {
 
-        content: '<IMG BORDER="0" name="slide" ALIGN="Left" SRC="amazonas.png">'
+content: '<IMG BORDER="0" name="slide" width=350"" height="200" he ALIGN="Left" SRC="/cakephp-cake/img/Local/local1.png">'
 
       };
 
@@ -495,38 +440,31 @@ class validacion
       });
 
     </script>
-
-    <div id="divFormulario">
-      <?php echo '<form id="envios" name="correo" method="post" action="'.$redireccionar.'">'; ?>
-        <span id="sprytextfield1"><input class="elemento" type="text" name="asunto" maxlength="50" placeholder="Ingresa el asunto"><span class="textfieldRequiredMsg">Debes ingresar un Asunto.</span></span>
-        <span id="sprytextfield3"><input class="elemento" type="text" name="mail" maxlength="50" placeholder="Ingresa tu correo"><span class="textfieldRequiredMsg">Debes ingresar tu correo.</span><span class="textfieldInvalidFormatMsg">El correo que ingresaste no dispone del formato adecuado.</span></span>
-        <span id="sprytextfield2"><textarea id="dimension" class="elemento" name="comentario" maxlength="500"></textarea><span class="textfieldRequiredMsg">Debes ingresar un mensaje.</span></span>
-        <input class="elemento" type="submit" value="Enviar">
-      </form>
+        <br><br>
+        <table align="center">
+         <tr>
+          <td>
+           <div class="fb-like-box" data-href="https://www.facebook.com/amazonas.galeria" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="false" data-show-border="true"></div>
+           </td>
+           <td>
+            <div class="users form" style="padding: 20px">
+                      <?php echo $this->Session->flash('auth'); ?>
+                      <?php echo $this->Form->create('User', array('controller' => 'user', 'action' => 'login', 'class' => 'form-horizontal')); ?>
+                          <fieldset>
+                              <?php 
+                                    echo $this->Form->input('username', array('div' => 'form-group', 'class' => 'form-control', 'label' => false, 'placeholder' => 'Usuario'));
+                                    echo $this->Form->input('password', array('div' => 'form-group', 'class' => 'form-control', 'label' => false, 'placeholder' => 'Contraseña'));
+                              ?>
+                          </fieldset>
+                      <?php echo $this->Form->submit('Entrar', array('class' => 'btn btn-info btn-sm')); ?>
+                      <?php echo $this->Form->end(); ?>
+                  </div> 
+           
+           </td>
+          </tr> 
+       </table>  
+  
     </div>
+  </div>  
 
-  </div>
 
-  <div class="clear"></div>
-
-  <?php
-
-    if($green)
-
-    {
-
-      echo '<div id="error"><p class="elErrorV"><b>'.$mensaje.'</b></p></div>';
-
-    }
-
-    else
-
-    {
-
-      echo '<div id="error"><p class="elErrorR"><b>'.$mensaje.'</b></p></div>';
-
-    }
-
-  ?>
-
-</div>
