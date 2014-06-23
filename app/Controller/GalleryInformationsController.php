@@ -13,6 +13,8 @@ public function contactanos(){
   $gallery = $this->GalleryInformation->find('all');
   $this->set('gallery', $gallery);
 }
+ 
+  
 
 }
 ?>
