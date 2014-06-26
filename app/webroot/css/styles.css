@@ -128,7 +128,7 @@ h1 {
 }
 
 #footer > .container {
-  
+
 }
 
 @media (min-width: 767px) {
@@ -136,11 +136,11 @@ h1 {
       float:none;
   }
 }
-  
+
 .navbar-nav {
-  margin: 1px 1px; 
-}  
-  
+  margin: 1px 1px;
+}
+
 /* customize nav style */
 .navbar-custom {
     background-color: #2e2e2e;
@@ -185,12 +185,12 @@ h1 {
 
 @media (max-width: 768px) {
 	header {
-	
+
 	}
 }
 
 #map-canvas {
-  	width: 100%; 
+  	width: 100%;
   	height: 300px;
 	margin: 0;
 	padding: 15px;
@@ -208,8 +208,8 @@ h1 {
 }
 .scroll-top a:link,.scroll-top a:visited {
   color:#222;
-} 
- 
+}
+
 
 section {
   color: #ffffff;
@@ -221,7 +221,7 @@ section {
 
 .bg-1 {
  background: url('/cakephp-cake/img/Local/pinturas1.jpg')no-repeat center center fixed;
-    /*url('http://www.bootply.com/assets/example/bg_suburb.jpg') no-repeat center center fixed;*/ 
+    /*url('http://www.bootply.com/assets/example/bg_suburb.jpg') no-repeat center center fixed;*/
     -webkit-background-size: cover;
   	-moz-background-size: cover;
   	-o-background-size: cover;
@@ -229,7 +229,7 @@ section {
 }
 
 .bg-2 {
-	background: url('http://www.bootply.com/assets/example/bg_suburb.jpg') no-repeat center center fixed; 
+	background: url('http://www.bootply.com/assets/example/bg_suburb.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
   	-moz-background-size: cover;
   	-o-background-size: cover;
@@ -237,7 +237,7 @@ section {
 }
 
 .bg-3 {
-	background: url('http://www.bootply.com/assets/example/bg_blueplane.jpg') no-repeat center center fixed; 
+	background: url('http://www.bootply.com/assets/example/bg_blueplane.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
   	-moz-background-size: cover;
   	-o-background-size: cover;
@@ -253,4 +253,17 @@ section {
 	min-height:400px;
     max-height:400px;
   width:600px;
+}
+
+.maximize {
+  background-color: rgba(0, 0, 0, 0);
+  height: 95%;
+  margin: 0;
+  padding: 0;
+}
+
+.carousel-caption > img {
+  min-width: 10% !important;
+  width: 30%;
+  height: auto;
 }

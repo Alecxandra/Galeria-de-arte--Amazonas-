@@ -6,14 +6,14 @@ class UsersController extends AppController
 
     public function beforeFilter() {
         parent::beforeFilter();
-        $this->Auth->allow('add', 'logout');
+        $this->Auth->allow('logout', 'login');
     }
 
   public function index()
 
   {
 
-    $this->redirect(array('controller' => 'home', 'action' => 'index'));
+    return $this->redirect(array('controller' => 'home', 'action' => 'index'));
 
   }
 
@@ -70,7 +70,7 @@ class UsersController extends AppController
 
         {
 
-          $this->Session->setFlash(__('The user has been saved'));
+          $this->Session->setFlash(__('El usuario ha sido registrado'));
 
           return $this->redirect(array('action' => 'index'));
 
@@ -117,9 +117,15 @@ class UsersController extends AppController
         return $this->redirect(array('action' => 'index'));
     }
 
-    public function admin() {}
+    public function admin()
 
-//$this->Html->url(array('controller' => 'GalleryInformations', 'action' => 'contactanos'));
+    {
+
+        $this->loadModel('User');
+        $users = $this->User->find('all');
+        $this->set('users', $users);
+
+    }
 
 }
 ?>

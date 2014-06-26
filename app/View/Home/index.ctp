@@ -50,11 +50,11 @@
 <div class="container">
   <div class="col-sm-10 col-sm-offset-1">
     <div class="page-header text-center">
-      <h1>Since 1998</h1>
+      <h1>Desde 1998</h1>
     </div>
 
     <p class="lead text-center">
-      The Firm has been providing Professional Design Services in the England area since 1923.
+      Ofrecemos las más finas obras, ligadas a los baluartes del arte nacional.
     </p>
 
     <hr>
@@ -65,23 +65,41 @@
 </div>
 
 <div class="row">
-  	<div class="col-sm-10 col-sm-offset-1">
-      <h1>Profile</h1>
+  	<div class="col-sm-10 col-sm-offset-1" style="text-align:justify;
+    text-justify:inter-word;">
+      <h1>Perfil</h1>
 
       <hr>
 
       <p>
-	  The Firm has had a great deal of experience and is highly regarded for its expertise in the areas of design, construction administration, construction management, tight cost control and scheduling.
-	  </p>
-      <p>
-	  We have been involved in a wide range of building projects, including college facilities, banks, schools, nursing homes, office buildings, churches, industrial buildings and major urban development projects.
+	       ¿Alguna vez te has adentrado en el variopinto universo del arte?
+         De aquellas praderas eternas, extensas como la comprensión misma,
+         donde, a rienda suelta, la propia naturaleza inquisitiva humana
+         se ha constituido, deambulado en senderos propios y en guía de un
+         tenue norte. De aquellos picos encrespados como la fascinación
+         misma y que, dada su naturaleza, exhorta a ínclitos pintores o a
+         desventurados fotógrafos en capturar su perpetua belleza, como
+         humildes interpretes humanos. De aquellas recónditas regiones
+         que, ignotas, a veces revelan la naturaleza perturbadora de un
+         mundo extraño, ambiguo, aleatorio; tentando a sus espectadores
+         a la burla misma.</br></br>
+
+        Un universo propio de manglares tan diversos como la vida misma,
+        y quizá, como su propia imaginación. Un entorno que presta sus
+        yermos a la cimentación de la libre expresión, del sentimiento,
+        que sienta en sus bases el andamio de un espíritu inexpresivo
+        humano, virtuoso, delicado, insurrecto y a veces sórdido. Un medio
+        dedicado, tanto a la protesta como a la virtud.</br></br>
+
+        El arte revela, en sus lienzos, solo un breve bocado de la
+        idiosincrasia humana, el ligero retrato de todo un entorno que
+        sumergió a quien, alguna vez, se digno en inmortalizarlo. Una breve
+        muestra de todo lo que no se pudo ver, un breve detalle donde el
+        artista, sumido en la angustia de haber ojeado en su epitafio una
+        llana y burda descripción de aquello que lo constituía, tendrá que
+        cargar su inexpresivo espíritu a su fúnebre morada. Una apuesta donde
+        se gana en eternidad.</br>
       </p>
-      <p>
-	  The various projects have included new construction, renovation and adaptive re-use as a way of providing new space for the various clients. Tessier Associates provides in-house programming, master planning, architectural design, construction documentation, project administration and interior design services. Sustainable design, as appropriate for each client, is incorporated in cost effective ways to benefit the long term value of the buildings created by the firm.
-	  </p>
-      <p>
-	  Together with selected consultants, The Firm provides complete professional services including landscape architecture, structural engineering, electrical and mechanical engineering and site planning.
-	  </p>
 
       <hr>
 

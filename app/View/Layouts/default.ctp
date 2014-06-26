@@ -59,18 +59,17 @@
                 <li><?php echo $this->Html->link('Pintores', array('controller' => 'Painters', 'action' => 'artists'));?></li>
             </ul>
           </li>
-           <li><a href="#section2"><?php echo $this->Html->link('Quienes Somos', array('controller' => 'quienes', 'action' => 'quienesomos'));?></</a></li>
-          <li><a href="#section4"><?php echo $this->Html->link('Contactanos', array('controller' => 'GalleryInformations', 'action' => 'contactanos'));?></a></li>
+           <li><?php echo $this->Html->link('Quienes Somos', array('controller' => 'quienes', 'action' => 'quienesomos'));?></li>
+          <li><?php echo $this->Html->link('Contactanos', array('controller' => 'GalleryInformations', 'action' => 'contactanos'));?></li>
 					<?php if (AuthComponent::user('id_user')): ?>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Administración <b class="caret"></b></a>
             <ul class="dropdown-menu">
-              <li><?php echo $this->Html->link('Pinturas', array(
-                      'controller' => 'paintings',
-                      'action' => 'index',
-                    )); ?>
-              </li>
+              <li><?php echo $this->Html->link('Pinturas', array('controller' => 'paintings', 'action' => 'index')); ?></li>
               <li><?php echo $this->Html->link('Pintores', array('controller' => 'painters', 'action' => 'index')); ?></li>
+							<li><?php echo $this->Html->link('Técnicas', array('controller' => 'techniques', 'action' => 'index')); ?></li>
+							<li><?php echo $this->Html->link('Tipos de Arte', array('controller' => 'types', 'action' => 'index')); ?></li>
+							<li><?php echo $this->Html->link('Usuarios', array('controller' => 'users', 'action' => 'admin')); ?></li>
             </ul>
           </li>
           <?php endif; ?>

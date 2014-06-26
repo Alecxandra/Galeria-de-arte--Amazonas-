@@ -30,11 +30,14 @@
  */
 	Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));
 
-	Router::connect('/users/login/*', array('controller' => 'users', 'action' => 'login'));
-	Router::connect('/users/add/*', array('controller' => 'users', 'action' => 'add'));
-	Router::connect('/users/*', array('controller' => 'users', 'action' => 'admin'));
 	Router::connect('/painters/edit/:id',array('controller' => 'painters', 'action' => 'edit'),
     							array('pass' => array('class' , 'id'),'id' => '[0-9]+'));
+	Router::connect('/paintings/edit/:id',array('controller' => 'paintings', 'action' => 'edit'),
+									array('pass' => array('class' , 'id'),'id' => '[0-9]+'));
+  Router::connect('/techniques/edit/:id',array('controller' => 'techniques', 'action' => 'edit'),
+										array('pass' => array('class' , 'id'),'id' => '[0-9]+'));
+	Router::connect('/types/edit/:id',array('controller' => 'types', 'action' => 'edit'),
+										array('pass' => array('class' , 'id'),'id' => '[0-9]+'));
 
 /**
  * Load all plugin routes. See the CakePlugin documentation on

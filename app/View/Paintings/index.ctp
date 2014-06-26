@@ -17,8 +17,8 @@
     <tr>
       <td><?php echo $painting['Painting']['painting_name']; ?></td>
       <td><?php echo $this->Html->image($painting['Painting']['painting_picture'], array('style' => 'height:100px;width:auto;')); ?></td>
-      <td><?php echo $this->Html->link('Editar', '', array('class' => 'btn btn-info btn-sm')); ?></td>
-    </tr>   
+      <td><?php echo $this->Html->link('Editar', array('controller'=>'paintings', 'action' => 'edit', 'id'=> $painting['Painting']['id_painting'])); ?></td>
+    </tr>
   <?php endforeach; ?>
     </tbody>
   </table>
