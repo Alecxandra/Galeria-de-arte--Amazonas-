@@ -10,7 +10,6 @@
     $ciudad = $painters['painter_cityofbirth'];
     $pais = $painters['painter_countryofbirth'];
     $biografia = $painters['painter_biography'];
-    $imagen = $painters['painter_picture'];
 
   }
 
@@ -25,7 +24,6 @@
   <?php echo $this->Form->input('painter_cityofbirth', array('empty' => false, 'class' => 'form-control', 'div' => 'form-group', 'placeholder' => 'Ciudad de nacimiento', 'default'=>$ciudad, 'label' => false)); ?>
   <?php echo $this->Form->input('painter_countryofbirth', array('class' => 'form-control', 'div' => 'form-group', 'default'=>$pais, 'placeholder' => 'País de nacimiento', 'label' => false)); ?>
   <?php echo $this->Form->input('biography', array('empty' => false, 'class' => 'form-control', 'div' => 'form-group', 'label' => false, 'type' => 'text', 'default'=>$biografia, 'placeholder' => 'Biografía', 'type' => 'textarea')); ?>
-  </br>
   <?php echo $this->Form->submit('Guardar', array('class' => 'btn btn-primary', 'div' => 'row')); ?>
   <br><br>
   <?php echo $this->Form->end(); ?>
