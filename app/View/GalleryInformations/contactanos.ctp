@@ -209,7 +209,7 @@
 
         <?php
 
-          echo " <span id='sprytextfield3'>".$this->Form->input('mail', array('div' => 'form-group', 'name'=>'mail', 'class' => 'form-control', 'label' => false, 'placeholder' => 'Ingresa tu correo','style'=>'width:350px'))."<span class='textfieldRequiredMsg'>Debes ingresar tu correo.</span><span class='textfieldInvalidFormatMsg'>El correo que ingresaste no dispone del formato adecuado.</span></span>";
+          echo "<span id='sprytextfield3'>".$this->Form->input('mail', array('div' => 'form-group', 'name'=>'mail', 'class' => 'form-control', 'label' => false, 'placeholder' => 'Ingresa tu correo','style'=>'width:350px'))."<span class='textfieldRequiredMsg'>Debes ingresar tu correo.</span><span class='textfieldInvalidFormatMsg'>El correo que ingresaste no dispone del formato adecuado.</span></span>";
           echo "<span id='sprytextfield1'>".$this->Form->input( 'asunto',array('div' => 'form-group','name'=>'asunto' , 'class' => 'form-control', 'label' => false, 'placeholder' => 'Asunto','style'=>'width:350px'))."<span class='textfieldRequiredMsg'>Debes ingresar un Asunto.</span></span>";
           echo "<span id='sprytextfield2'>".$this->Form->input('comentario',array('name'=>'comentario','type'=>'textarea','div' => 'form-group', 'class' => 'form-control', 'label' => false, 'placeholder' => 'Ingresa un mensaje','style'=>'width:350px'))."<span class='textfieldRequiredMsg'>Debes ingresar un mensaje.</span></span>";
 

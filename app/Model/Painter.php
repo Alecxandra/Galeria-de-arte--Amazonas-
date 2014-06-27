@@ -66,7 +66,7 @@ class Painter extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'painters_biography' => array(
+		'painter_biography' => array(
 			'notEmpty' => array(
 				'rule' => array('notEmpty'),
 				//'message' => 'Your custom message here',
@@ -77,13 +77,13 @@ class Painter extends AppModel {
 			),
 		),
 	);
- 
+
   public $hasMany = array(
         'Painting' => array(
             'className' => 'Painting',
             'foreignKey' => 'id_painter',
-        ) 
+        )
     );
-  
+
   public $actsAs = array('Containable');
 }

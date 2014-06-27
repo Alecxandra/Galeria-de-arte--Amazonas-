@@ -121,7 +121,12 @@
 <script type="text/javascript">
       var sprytextfield1 = new Spry.Widget.ValidationTextField("sprytextfield1");
       var sprytextfield2 = new Spry.Widget.ValidationTextField("sprytextfield2");
-			var sprytextfield3 = new Spry.Widget.ValidationTextField("sprytextfield3", "email");
+			var sprytextfield5 = new Spry.Widget.ValidationTextField("sprytextfield5");
+			var sprytextfield3 = new Spry.Widget.ValidationTextField("sprytextfield3", "email");//Lo de Abajo es nuevo.
+			var sprytextfield4 = new Spry.Widget.ValidationTextField("sprytextfield4", "integer", {allowNegative:false});
+			var sprytextfield6 = new Spry.Widget.ValidationTextField("sprytextfield6", "integer", {allowNegative:false});
+			var sprytextfield7 = new Spry.Widget.ValidationTextField("sprytextfield7", "integer", {allowNegative:false});
+			var sprytextfield8 = new Spry.Widget.ValidationTextField("sprytextfield8", "real", {allowNegative:false});			
 </script>
 </body>
 </html>
