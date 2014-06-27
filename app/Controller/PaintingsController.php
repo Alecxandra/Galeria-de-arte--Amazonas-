@@ -23,6 +23,52 @@ class PaintingsController extends AppController {
     
   }
   
+  public function edit() {
+    if (empty($this->request->data)) {
+      $this->request->data = $this->Painting->find('first', array('conditions' => array('id_painting' => $this->request->named['id'])));
+      $this->loadModel('Technique');
+      $techniques = $this->Technique->find('all');
+      $techniques_select = array();
+      foreach ($techniques as $technique) {
+        $techniques_select[$technique['Technique']['id_technique']] = $technique['Technique']['technique_name'];
+      }
+      $this->set('techniques', $techniques_select);
+
+      $this->loadModel('Type');
+      $this->Type->unbindModel(array('hasMany' => array('Painting')));
+      $types = $this->Type->find('all');
+      $types_select = array();
+      foreach ($types as $type) {
+        $types_select[$type['Type']['id_type']] = $type['Type']['type_name'];
+      }
+      $this->set('types', $types_select);
+
+      $this->loadModel('Painter');
+      $this->Painter->unbindModel(array('hasMany' => array('Painting')));
+      $painters = $this->Painter->find('all');
+      $painters_select = array();
+      foreach ($painters as $painter) {
+        $painters_select[$painter['Painter']['id_painter']] = $painter['Painter']['painter_name'];
+      }
+      $this->set('painters', $painters_select);
+    } else {
+        if (empty($this->request->data['Painting']['painting_picture']['name'])) {
+          unset($this->request->data['Painting']['painting_picture']);
+        } else {
+          $target_path = "img/". $this->request->data['Painting']['painting_picture']['name'];
+          move_uploaded_file($this->request->data['Painting']['painting_picture']['tmp_name'], $target_path);
+          $this->request->data['Painting']['painting_picture'] = $this->request->data['Painting']['painting_picture']['name'];
+        }
+      
+        if ($this->Painting->save($this->request->data)) {
+          $this->Session->setFlash('La pintura se ha actualizado.');
+        } else {
+          $this->Session->setFlash('Ha ocurrido un error');
+        }
+        $this->redirect(array('action' => 'index'));
+    }
+  }
+
   public function add() {
     $this->loadModel('Technique');
     $this->Technique->unbindModel(array('hasMany' => array('Painting')));
@@ -71,4 +117,6 @@ class PaintingsController extends AppController {
     //pr($paintings);
   }
   
-}
+ 
+  
+}//fin de la clase

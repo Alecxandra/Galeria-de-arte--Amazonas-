@@ -5,7 +5,7 @@
 
   	<!-- Carousel
     ================================================== -->
-    <div id="myCarousel" class="carousel slide" style="max-width: 100%;height: 600px;" data-ride="carousel">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
       <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -55,12 +55,12 @@
 <div class="container">
   <div class="col-sm-10 col-sm-offset-1">
     <div class="page-header text-center">
-      <h1>Since 1998</h1>
+      <h1>Desde 1998</h1>
     </div>
     
     <p class="lead text-center"> 
-      The Firm has been providing Professional Design Services in the England area since 1923.
-    </p> 
+      Amazonas ha sido la galería de arte mas reconocida de América Central desde 1998
+      </p> 
     
     <hr>
     
@@ -79,21 +79,26 @@
    
 <div class="row">
   	<div class="col-sm-10 col-sm-offset-1">
-      <h1>Profile</h1>
+      <h1>Perfil</h1>
       
       <hr>
      
       <p>
-	  The Firm has had a great deal of experience and is highly regarded for its expertise in the areas of design, construction administration, construction management, tight cost control and scheduling.
+	   La galería Amazonas se ha constituido como una de las entidades comerciales, dedicadas a la índole artística, más prominentes
+     de la Región.
 	  </p> 
       <p>
-	  We have been involved in a wide range of building projects, including college facilities, banks, schools, nursing homes, office buildings, churches, industrial buildings and major urban development projects.
+	  Como galería, ha dispuesto de clientes cuyas orígenes, aposentos, se extienden
+    desde el cono sur del continente Americano, hasta Estados Unidos de América, y
+    desde Israel, extendiéndose al medio oriente
       </p> 
       <p>
-	  The various projects have included new construction, renovation and adaptive re-use as a way of providing new space for the various clients. Tessier Associates provides in-house programming, master planning, architectural design, construction documentation, project administration and interior design services. Sustainable design, as appropriate for each client, is incorporated in cost effective ways to benefit the long term value of the buildings created by the firm.
+	   Exponentes nacionales e Internacionales, que expresan distintas ideas,
+    enfrascadas en distintas técnicas y distintos estilos artísticos, son exhibidos
+    en la Galería.
 	  </p> 
       <p>
-	  Together with selected consultants, The Firm provides complete professional services including landscape architecture, structural engineering, electrical and mechanical engineering and site planning.
+	  
 	  </p> 
       
       <hr>

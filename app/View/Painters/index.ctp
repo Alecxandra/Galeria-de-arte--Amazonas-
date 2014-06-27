@@ -15,8 +15,8 @@
       <?php foreach ($painters as $painter): ?>
     <tr>
       <td><?php echo $painter['Painter']['painter_name']; ?></td>
-      <td><?php echo $this->Html->link('Editar', '', array('class' => 'btn btn-info btn-sm')); ?></td>
-    </tr>   
+      <td><?php echo $this->Html->link('Editar', array('controller'=>'painters', 'action' => 'edit', 'id'=> $painter['Painter']['id_painter']), array('class' => 'btn btn-sm btn-info')); ?></td>
+    </tr>
   <?php endforeach; ?>
     </tbody>
   </table>

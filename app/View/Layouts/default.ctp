@@ -60,8 +60,8 @@
                 <li><?php echo $this->Html->link('Pintores', array('controller' => 'Painters', 'action' => 'artists'));?></li>
             </ul>
           </li>
-           <li><a >Quienes Somos</a> <?php //echo $this->Html->link('Agregar', array('controller' => 'Users', 'action' => 'add'));?></li>
-          <li><?php echo $this->Html->link('Contactanos', array('controller' => 'GalleryInformations', 'action' => 'contactanos'));?></li>
+           <li><?php echo $this->Html->link('Quienes Somos', array('controller' => 'About', 'action' => 'about'));?></li>
+          <li><?php echo $this->Html->link('Contactenos', array('controller' => 'GalleryInformations', 'action' => 'contactanos'));?></li>
           <?php if (AuthComponent::user('id_user')): ?>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Administración <b class="caret"></b></a>
